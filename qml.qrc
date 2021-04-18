@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>room_panel/RoomPanel.qml</file>
+        <file>room_panel/RoomTile.qml</file>
+        <file>icons/anonymous.png</file>
+        <file>icons/anonymous.svg</file>
+        <file>icons/superman.png</file>
+        <file>icons/superman.svg</file>
+        <file>icons/bender.png</file>
+        <file>icons/bender.svg</file>
+    </qresource>
+</RCC>
