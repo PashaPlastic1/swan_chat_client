@@ -9,21 +9,20 @@ GridLayout {
 
     id: root
 
-//    columns: 2
+    columns: 2
 
     Repeater {
         id: repeater
 
         delegate: RoomTile {
             id: roomTile
-            elemenHeight: cellHeight
-//            Layout.fillWidth: true
-            Layout.preferredWidth: root.width / 2 - root.columnSpacing
+            Layout.fillWidth: true
+//            Layout.preferredWidth: root.width / 2 - root.columnSpacing
             Layout.preferredHeight: elemenHeight * filledRowCount + 5
-            Layout.columnSpan: filledRowCount
+            Layout.rowSpan: filledRowCount
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-            Component.onCompleted: console.log(width)
-            onHeightChanged: console.log(index, "height:", height)
+            elemenHeight: cellHeight
         }
+
     }
 }

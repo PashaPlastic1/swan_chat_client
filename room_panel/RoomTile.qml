@@ -15,7 +15,7 @@ Rectangle {
 
     id: roomTile
     color: "transparent"
-    clip: true
+//    clip: true
 //    radius: 6
 
 
@@ -129,8 +129,10 @@ Rectangle {
 
                 Loader {
                     property var userImage: model.userImage
-                    Layout.fillHeight: true
+//                    Layout.preferredHeight: roomTile.messageScaleFactor * roomTile.elemenHeight / 2
+                    Layout.preferredHeight: messageLabel.font.pixelSize * 1.2
                     Layout.preferredWidth: parent.width * 0.1
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
                     sourceComponent: {
                         switch (model.whoSendType) {

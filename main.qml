@@ -1,12 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1
+import QtQuick.Controls.Material 2
 import "./room_panel"
 //import Qt5Compat.GraphicalEffects
 //import QtQuick.VirtualKeyboard 2.15
 
 ApplicationWindow {
-    readonly property double scaleFactor: 0.3
+    readonly property double scaleFactor: 0.4
 
     id: window
     width: 1080 * scaleFactor
@@ -19,10 +19,28 @@ ApplicationWindow {
 //        opacity: 0.7
     }
 
-    RoomPanel {
-        anchors.fill: parent
+    contentData: RoomPanel {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: implicitHeight
         anchors.margins: 5
         myModel: ModelFactory.roomModel
+        onImplicitHeightChanged: console.log(implicitHeight)
+        columnSpacing: anchors.margins
+        rowSpacing: anchors.margins
+    }
+
+    footer: TabBar {
+        TabButton {
+//            text: qsTr("Комнаты")
+            icon.source: "qrc:/icons/room.png"
+            icon.color: checked ? Material.color(Material.Pink, Material.Shade200) : Material.color(Material.Grey)
+        }
+        TabButton {
+            icon.source: "qrc:/icons/options.png"
+            icon.color: checked ? Material.color(Material.Pink, Material.Shade200) : Material.color(Material.Grey)
+        }
     }
 
 //    GridLayout {

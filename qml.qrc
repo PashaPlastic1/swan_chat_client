@@ -10,5 +10,7 @@
         <file>icons/superman.svg</file>
         <file>icons/bender.png</file>
         <file>icons/bender.svg</file>
+        <file>icons/room.png</file>
+        <file>icons/options.png</file>
     </qresource>
 </RCC>
